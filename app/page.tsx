@@ -83,6 +83,20 @@ function Avatars() {
   );
 }
 
+/* Carrossel dos materiais entregues (fichas A4). */
+function MaterialsCarousel() {
+  return (
+    <Marquee
+      duration={32}
+      imageSize={{ width: 595, height: 842 }}
+      items={Array.from({ length: 8 }, (_, i) => ({
+        src: `/img/entregavel-${i + 1}.webp`,
+        alt: `Ficha do material Cookie Lab ${i + 1}`,
+      }))}
+    />
+  );
+}
+
 /* Carrossel de prints de depoimentos: 1,5 imagem visível por vez. */
 function TestimonialGrid() {
   return (
@@ -228,14 +242,7 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <Marquee
-          items={[
-            { src: "/img/sheet-1.webp", alt: "Ficha de receita do Cookie Clássico" },
-            { src: "/img/sheet-2.webp", alt: "Ficha do bônus de captação de clientes" },
-            { src: "/img/sheet-1.webp", alt: "" },
-            { src: "/img/sheet-2.webp", alt: "" },
-          ]}
-        />
+        <MaterialsCarousel />
       </section>
 
       {/* Por que vender cookies */}
@@ -296,6 +303,9 @@ export default function Home() {
               <p className="text-center font-display text-[20px] leading-[1.18] text-white">{t}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-[20px] flex w-full justify-center">
+          <MaterialsCarousel />
         </div>
       </section>
 
@@ -405,12 +415,19 @@ export default function Home() {
         <h2 className="font-display text-[32px] font-semibold leading-[1.008] text-white">
           Compra 100% Segura e Garantida!
         </h2>
-        <div className="max-w-[282px] text-[16px] text-white">
+        <div className="max-w-[320px] text-[16px] text-white">
           <p>SEU INVESTIMENTO É TOTALMENTE SEGURO</p>
           <p className="mt-[16px]">
             Oferecemos 7 dias de garantia total para você testar o material. Se decidir que não é para você, basta
             cancelar a compra e devolveremos todo o valor pago, sem complicação.
           </p>
+          <p className="mt-[20px] text-[14px]">Precisa de ajuda? Entre em contato conosco:</p>
+          <a
+            href="mailto:contato@acookiela.com"
+            className="mt-[10px] inline-block rounded-[10px] bg-cta px-[24px] py-[12px] font-display text-[18px] font-semibold text-navy transition hover:brightness-110"
+          >
+            contato@acookiela.com
+          </a>
         </div>
       </section>
 
@@ -465,6 +482,12 @@ export default function Home() {
       {/* Rodapé */}
       <footer className="mx-auto w-full max-w-[720px] px-[24px] py-[30px] text-center">
         <p className="text-[14px]">Copyright {new Date().getFullYear()} - Todos os direitos reservados.</p>
+        <p className="mt-[8px] text-[14px]">
+          Contato:{" "}
+          <a href="mailto:contato@acookiela.com" className="font-semibold text-brand hover:underline">
+            contato@acookiela.com
+          </a>
+        </p>
         <p className="mt-[20px] text-[12px] text-muted">
           Este site não possui qualquer vínculo com Facebook, Google ou qualquer outra plataforma mencionada. Todos os
           direitos da obra &ldquo;Cookie Lab&rdquo; são reservados ao seu autor. A reprodução não autorizada, total ou
