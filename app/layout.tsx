@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   robots: { index: true, follow: true },
+  other: {
+    "facebook-domain-verification": "605r3kua2i8ifzjkc9a5lbw6yw6dy8",
+  },
 };
 
 export default function RootLayout({
