@@ -4,6 +4,8 @@ import { Marquee } from "@/components/Marquee";
 import { MathSection } from "@/components/MathSection";
 import { CtaButton } from "@/components/CtaButton";
 import { TodayDate } from "@/components/TodayDate";
+import { Countdown } from "@/components/Countdown";
+import { StickyCta } from "@/components/StickyCta";
 import { CHECKOUT_BASIC, CHECKOUT_COMPLETE } from "@/lib/config";
 
 /* ---------- peças compartilhadas ---------- */
@@ -180,8 +182,10 @@ export default function Home() {
       <div className="flex items-center justify-center bg-brand p-[10px]">
         <p className="font-display text-[12px] font-semibold text-white">
           OFERTA ESPECIAL DISPONÍVEL SOMENTE HOJE <TodayDate />
+          <Countdown />
         </p>
       </div>
+      <StickyCta />
 
       {/* Hero */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[16px] px-[10px] pt-[30px] text-center">
@@ -359,8 +363,8 @@ export default function Home() {
           <FeatureList items={PLAN_FEATURES} />
           <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$27,90</p>
-          <p className="font-display text-[18px] text-black">ou 4x de R$4,47 no cartão</p>
-          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" />
+          <p className="font-display text-[18px] text-black">ou 4x de R$8,14 no cartão</p>
+          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" checkoutValue={27.9} />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
             <span className="text-black">Leve mais e pague menos, 97% escolhem a nossa</span>{" "}
@@ -388,8 +392,8 @@ export default function Home() {
             <FeatureList items={[...PLAN_FEATURES, ...BONUS_FEATURES]} light />
             <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$37,90</p>
-            <p className="font-display text-[18px] text-white">ou 4x de R$4,47 no cartão</p>
-            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" />
+            <p className="font-display text-[18px] text-white">ou 5x de R$8,83 no cartão</p>
+            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" checkoutValue={37.9} />
           </div>
         </div>
         </div>
