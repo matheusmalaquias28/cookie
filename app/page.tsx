@@ -288,6 +288,27 @@ export default function Home() {
         <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="oportunidade" className="mt-[10px]" />
       </section>
 
+      {/* Aviso de urgência */}
+      <section className="flex w-full flex-col items-center gap-[14px] bg-alert px-[20px] py-[35px] text-center [&>p]:max-w-[620px]">
+        <span className="text-[40px] leading-none" aria-hidden>
+          ⚠️
+        </span>
+        <h2 className="max-w-[620px] font-display text-[38px] font-semibold leading-[0.9] text-white">
+          Você provavelmente perdeu as outras ondas...
+        </h2>
+        <p className="text-[18px] text-white">
+          Morango do Amor, Bolo de Pote, Copo da Felicidade: todos venderam <strong>muito</strong> no Brasil inteiro, e
+          quem entrou cedo faturou mais.
+        </p>
+        <p className="text-[18px] text-white">
+          A hora de sair na frente e vender muito é <strong>agora</strong>, enquanto os Cookies Premium ainda estão
+          começando.
+        </p>
+        <p className="font-display text-[22px] font-semibold leading-[1.1] text-white">
+          Por isso, essa oferta NÃO ficará liberada por muito tempo!
+        </p>
+      </section>
+
       {/* Faça as contas */}
       <MathSection />
 
