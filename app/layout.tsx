@@ -3,6 +3,7 @@ import { Fredoka, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Gtm } from "@/components/Gtm";
+import { MetaPixel } from "@/components/MetaPixel";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         {children}
         <Gtm />
+        <MetaPixel />
         <Analytics />
         <SpeedInsights />
       </body>
