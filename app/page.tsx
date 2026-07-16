@@ -194,8 +194,10 @@ export default function Home() {
     <main className="flex w-full flex-col">
       {/* Barra de oferta */}
       <div className="flex items-center justify-center bg-brand p-[10px]">
-        <p className="font-display text-[12px] font-semibold text-white">
-          OFERTA ESPECIAL DISPONÍVEL SOMENTE HOJE <TodayDate />
+        <p className="text-center font-display text-[12px] font-semibold leading-[1.6] text-white">
+          <span className="block lg:inline">
+            OFERTA ESPECIAL DISPONÍVEL SOMENTE HOJE <TodayDate />
+          </span>
           <Countdown />
         </p>
       </div>
