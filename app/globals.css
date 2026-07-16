@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #6d4aff;
+  --color-cta: #00db6a;
+  --color-badge: #07c707;
+  --color-ink: #242424;
+  --color-dark: #131313;
+  --color-navy: #041774;
+  --color-alert: #e30000;
+  --color-muted: #757575;
+  --font-display: var(--font-fredoka);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* Carrossel contínuo: a trilha contém 2 cópias da lista e desloca metade do próprio comprimento */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 20s) linear infinite;
+  will-change: transform;
+}
+
+/* CTA: pulso suave contínuo; no hover a animação pausa e o botão sobe */
+@keyframes cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 219, 106, 0.45);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 0 12px rgba(0, 219, 106, 0);
+  }
+}
+.cta-pulse {
+  animation: cta-pulse 2s ease-in-out infinite;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-pulse:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(0, 219, 106, 0.4);
+}
+.cta-pulse:active {
+  transform: scale(0.98);
+}
+
+/* Seção "Faça as contas": revelação em cascata quando entra na tela */
+@keyframes fx-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fx-settle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.fx-item {
+  opacity: 0;
+}
+.fx-in .fx-item {
+  animation: fx-rise 0.5s ease-out both;
+  animation-delay: var(--fx-delay, 0s);
+}
+.fx-in .fx-final {
+  animation: fx-rise 0.5s ease-out both, fx-settle 0.6s ease-in-out 1;
+  animation-delay: var(--fx-delay, 0s), calc(var(--fx-delay, 0s) + 0.55s);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
