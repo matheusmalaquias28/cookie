@@ -426,7 +426,7 @@ export default function Home() {
             href="mailto:contato@acookiela.com"
             className="mt-[10px] inline-block rounded-[10px] bg-cta px-[24px] py-[12px] font-display text-[18px] font-semibold text-navy transition hover:brightness-110"
           >
-            contato@acookiela.com
+            contato@acookielab.com
           </a>
         </div>
       </section>
@@ -485,7 +485,7 @@ export default function Home() {
         <p className="mt-[8px] text-[14px]">
           Contato:{" "}
           <a href="mailto:contato@acookiela.com" className="font-semibold text-brand hover:underline">
-            contato@acookiela.com
+            contato@acookielab.com
           </a>
         </p>
         <p className="mt-[20px] text-[12px] text-muted">
