@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Gtm } from "@/components/Gtm";
 import "./globals.css";
 
@@ -39,6 +41,8 @@ export default function RootLayout({
       <body>
         {children}
         <Gtm />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
