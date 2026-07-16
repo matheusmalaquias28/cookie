@@ -46,32 +46,16 @@ function loadScript() {
 }
 
 /**
- * Meta Pixel fora do caminho crítico: o stub enfileira init + PageView na hora,
- * e o fbevents.js carrega na primeira interação ou quando o navegador ficar ocioso.
+ * Meta Pixel: o stub enfileira init + PageView e o fbevents.js carrega
+ * imediatamente (async — não bloqueia a renderização). Carregamento imediato é
+ * necessário para a ferramenta de configuração de eventos da Meta detectar o pixel.
  */
 export function MetaPixel() {
   useEffect(() => {
     const fbq = ensureStub();
     fbq("init", PIXEL_ID);
     fbq("track", "PageView");
-
-    const events: (keyof WindowEventMap)[] = ["scroll", "pointerdown", "keydown", "touchstart"];
-    const onFirstInteraction = () => {
-      loadScript();
-      events.forEach((e) => removeEventListener(e, onFirstInteraction));
-    };
-    events.forEach((e) => addEventListener(e, onFirstInteraction, { once: true, passive: true }));
-
-    const idle =
-      "requestIdleCallback" in window
-        ? requestIdleCallback(loadScript, { timeout: 5000 })
-        : setTimeout(loadScript, 5000);
-
-    return () => {
-      events.forEach((e) => removeEventListener(e, onFirstInteraction));
-      if ("requestIdleCallback" in window) cancelIdleCallback(idle as number);
-      else clearTimeout(idle as ReturnType<typeof setTimeout>);
-    };
+    loadScript();
   }, []);
 
   return (
