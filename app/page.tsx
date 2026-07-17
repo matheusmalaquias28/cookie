@@ -403,6 +403,7 @@ export default function Home() {
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$27,90</p>
           <p className="font-display text-[18px] text-black">ou 3x de R$9,96 no cartão</p>
           <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" checkoutValue={27.9} />
+          <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 400px, 90vw" className="w-full max-w-[400px]" />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
             <span className="text-black">Leve mais e pague menos, 97% escolhem a nossa</span>{" "}
@@ -432,6 +433,7 @@ export default function Home() {
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$37,90</p>
             <p className="font-display text-[18px] text-white">ou 5x de R$8,39 no cartão</p>
             <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" checkoutValue={37.9} />
+            <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 400px, 90vw" className="w-full max-w-[400px] rounded-[8px] bg-white p-[10px]" />
           </div>
         </div>
         </div>
