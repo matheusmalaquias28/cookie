@@ -49,6 +49,16 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${fredoka.variable} ${manrope.variable} antialiased`}>
       <body>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `window.pixelId = "6a59941a6f716bcb8a5f23fa";
+var a = document.createElement("script");
+a.setAttribute("async", "");
+a.setAttribute("defer", "");
+a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+document.head.appendChild(a);`,
+          }}
+        />
+        <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-subids
           async
