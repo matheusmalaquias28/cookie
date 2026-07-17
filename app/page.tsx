@@ -109,6 +109,9 @@ function TestimonialGrid() {
         { src: "/img/feedback-2.webp", alt: "Depoimento de aluna no WhatsApp" },
         { src: "/img/feedback-3.webp", alt: "Depoimento de aluna no WhatsApp" },
         { src: "/img/feedback-4.webp", alt: "Depoimento de aluna no WhatsApp" },
+        { src: "/img/feedback-5.webp", alt: "Depoimento de aluna no Instagram", size: { width: 738, height: 1312 } },
+        { src: "/img/feedback-6.webp", alt: "Depoimento de aluna no Instagram", size: { width: 738, height: 1312 } },
+        { src: "/img/feedback-7.webp", alt: "Depoimento de aluna no Instagram", size: { width: 738, height: 1312 } },
       ]}
     />
   );
@@ -185,6 +188,11 @@ const FAQ = [
   ["Posso assistir pelo celular?", "Sim, o material funciona em celular, computador e tablet."],
   ["E se eu não gostar do material?", "Você tem 7 dias de garantia total. Basta pedir o reembolso e devolvemos todo o valor pago."],
   ["A compra é segura?", "Totalmente. O pagamento é processado por plataforma segura e seus dados ficam protegidos."],
+  ["Funciona para quem mora em cidade pequena?", "Sim! Em cidades pequenas a concorrência é menor e o boca a boca funciona ainda mais rápido. Vizinhos, escolas, comércios e eventos locais são ótimos pontos de venda."],
+  ["Eu sou tímida, não sei vender nem abordar as pessoas", "Sem problema. O bônus de como conseguir os primeiros clientes traz estratégias simples que não dependem de abordagem: você pode vender pelo WhatsApp, Instagram e por indicação — o produto chama atenção sozinho."],
+  ["Tenho pouco tempo no meu dia, dá para vender mesmo assim?", "Dá sim. Você pode produzir em poucas horas nos horários livres ou finais de semana. A massa pode ser feita com antecedência, e você define seu próprio ritmo de produção e vendas."],
+  ["Preciso ter muitos equipamentos para começar?", "Não. Forno, batedeira (ou até mesmo as mãos), tigelas e assadeiras que você provavelmente já tem em casa são suficientes para começar."],
+  ["Por que esse material é diferente de uma simples receita de Cookie?", "Porque receita sozinha não gera renda. Aqui você recebe 100 receitas validadas + o passo a passo do negócio: precificação, cálculo de custos, embalagens e estratégias para conseguir e fidelizar clientes."],
 ] as const;
 
 /* ---------- página ---------- */
@@ -215,6 +223,13 @@ export default function Home() {
           produto que as pessoas realmente querem comprar.
         </p>
         <Collage preload />
+        <div className="w-full max-w-[382px] rounded-[12px] bg-gradient-to-br from-brand to-[#4b2bd6] px-[16px] py-[12px] text-white shadow-[0_10px_28px_-12px_rgba(109,74,255,0.5)]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/70">🧮 Faça as contas</p>
+          <p className="mt-[4px] font-display text-[18px] font-semibold leading-[1.25]">
+            10 Cookies vendidos no dia por R$14 = <span className="whitespace-nowrap">R$2.800/mês</span>{" "}
+            <span className="text-[13px] font-normal text-white/80">em vendas*</span>
+          </p>
+        </div>
         <div className="flex flex-wrap items-start justify-center gap-x-[10px]">
           {["Receitas Testadas", "Ingredientes fáceis de encontrar", "Método pensado para iniciantes", "Estratégias para vender"].map((t) => (
             <span key={t} className="flex w-[175px] items-center gap-[10px] p-[10px] font-display text-[14px] text-black">
@@ -318,6 +333,42 @@ export default function Home() {
 
       {/* Faça as contas */}
       <MathSection />
+
+      {/* Antes x Depois */}
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[20px] px-[10px] py-[35px] text-center lg:max-w-[820px]">
+        <h2 className="max-w-[382px] font-display text-[38px] font-semibold leading-[0.9] text-ink lg:max-w-[560px]">
+          &ldquo;Mas fazer Cookies é fácil, por que eu deveria comprar?&rdquo;
+        </h2>
+        <p className="max-w-[382px] text-[18px]">
+          Fazer é só o começo. A diferença entre um hobby e uma <strong>renda de verdade</strong> está no que vem
+          depois: vender, precificar e conquistar clientes.
+        </p>
+        <div className="grid w-full max-w-[382px] grid-cols-1 gap-[12px] lg:max-w-[720px] lg:grid-cols-2">
+          <div className="flex flex-col gap-[10px] rounded-[16px] border border-[#e6e6e6] bg-[#f9f9f9] p-[20px] text-left">
+            <p className="font-display text-[22px] font-semibold text-muted">Sem o Cookie Lab</p>
+            <ul className="flex flex-col gap-[8px] text-[17px] text-[#6b6b6b]">
+              {["Sem renda", "Sem clientes", "Sem saber precificar"].map((t) => (
+                <li key={t} className="flex items-center gap-[10px]">
+                  <span aria-hidden>❌</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-[10px] rounded-[16px] bg-brand p-[20px] text-left shadow-[0_16px_36px_-16px_rgba(109,74,255,0.6)]">
+            <p className="font-display text-[22px] font-semibold text-white">Com o Cookie Lab</p>
+            <ul className="flex flex-col gap-[8px] text-[17px] font-semibold text-white">
+              {["Sabe produzir", "Sabe vender", "Sabe cobrar", "Sabe divulgar"].map((t) => (
+                <li key={t} className="flex items-center gap-[10px]">
+                  <span aria-hidden>✅</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="antes_depois" />
+      </section>
 
       {/* Ideal para você */}
       <section className="mx-auto flex w-full flex-col items-center gap-[8px] px-[10px] py-[35px]">

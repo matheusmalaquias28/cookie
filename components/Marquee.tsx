@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type Item = { src: string; alt: string };
+type Item = { src: string; alt: string; size?: { width: number; height: number } };
 
 type Props = {
   items: Item[];
@@ -30,8 +30,8 @@ export function Marquee({ items, duration = 20, itemWidth = 188, imageSize = { w
               src={it.src}
               alt={copy === 0 ? it.alt : ""}
               aria-hidden={copy === 1}
-              width={imageSize.width}
-              height={imageSize.height}
+              width={(it.size ?? imageSize).width}
+              height={(it.size ?? imageSize).height}
               sizes={`${itemWidth + 2}px`}
               className="shrink-0 rounded-[7px] object-cover"
               style={{ width: itemWidth }}
