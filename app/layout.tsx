@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     type: "website",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/img/favicon.png?v=2",
+    shortcut: "/img/favicon.png?v=2",
+    apple: "/img/favicon.png?v=2",
+  },
   other: {
     "facebook-domain-verification": "605r3kua2i8ifzjkc9a5lbw6yw6dy8",
   },
