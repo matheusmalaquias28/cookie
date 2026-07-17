@@ -43,6 +43,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${fredoka.variable} ${manrope.variable} antialiased`}>
       <body>
+        <script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-subids
+          async
+          defer
+        />
         {children}
         <Gtm />
         <MetaPixel />
