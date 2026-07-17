@@ -207,8 +207,8 @@ export default function Home() {
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[16px] px-[10px] pt-[30px] text-center">
         <Image src="/img/logo.webp" alt="Cookie Lab" width={142} height={46} preload className="h-[46px] w-auto" />
         <h1 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-          100 Receitas de Cookies para transformar sua cozinha em uma nova{" "}
-          <span className="text-brand">fonte de renda.</span>
+          Guia completo para vender Cookies e transformar sua cozinha em uma{" "}
+          <span className="text-brand">nova fonte de renda</span>
         </h1>
         <p className="max-w-[362px] text-[18px]">
           Aprenda a <strong>produzir cookies premium,</strong> mesmo começando do zero, e descubra como vender um
