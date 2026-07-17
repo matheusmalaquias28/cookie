@@ -278,7 +278,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
   - Técnicas de Preparo Profissional
   - Modelagem e Padronização
   - Erros Comuns e Como Corrigir
-- **Preço:** ~~R$39,90~~ → **R$27,90** — ou 3x de R$9,96 no cartão
+- **Preço:** ~~R$39,90~~ → **R$19,90** — ou 2x de R$10,47 no cartão
 - **CTA:** QUERO ESSA OPÇÃO!
 - **Selo:** formas de pagamento + compra segura Hotmart
 - **Downsell reverso (texto abaixo do botão):**
@@ -300,7 +300,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
   - 🎁 Cálculo de Custos e Margem de Lucro
   - 🎁 Modelos de embalagens para Valorizar o Produto
   - 🎁 Como conseguir e Fidelizar os Primeiros Clientes
-- **Preço:** ~~R$99,90~~ → **R$37,90** — ou 5x de R$8,39 no cartão
+- **Preço:** ~~R$99,90~~ → **R$29,90** — ou 4x de R$8,14 no cartão
 - **CTA:** QUERO O PLANO COMPLETO!
 - **Selo:** formas de pagamento + compra segura Hotmart
 
