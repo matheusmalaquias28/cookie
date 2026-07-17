@@ -230,6 +230,11 @@ export default function Home() {
         <Avatars />
       </section>
 
+      {/* Depoimentos abaixo da hero */}
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] py-[26px]">
+        <TestimonialGrid />
+      </section>
+
       {/* Materiais */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[20px] px-[10px] py-[30px] text-center lg:max-w-[640px]">
         <h2 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
@@ -396,7 +401,7 @@ export default function Home() {
           <FeatureList items={PLAN_FEATURES} />
           <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$27,90</p>
-          <p className="font-display text-[18px] text-black">ou 4x de R$8,14 no cartão</p>
+          <p className="font-display text-[18px] text-black">ou 3x de R$9,96 no cartão</p>
           <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" checkoutValue={27.9} />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
@@ -425,7 +430,7 @@ export default function Home() {
             <FeatureList items={[...PLAN_FEATURES, ...BONUS_FEATURES]} light />
             <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$37,90</p>
-            <p className="font-display text-[18px] text-white">ou 5x de R$8,83 no cartão</p>
+            <p className="font-display text-[18px] text-white">ou 5x de R$8,39 no cartão</p>
             <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" checkoutValue={37.9} />
           </div>
         </div>
