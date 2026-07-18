@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 /* Ícones Lucide inline (stroke 2, round) para não adicionar dependência */
 function IconCheck() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="#6d4aff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="size-[16px] shrink-0" aria-hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-brand, #6d4aff)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="size-[16px] shrink-0" aria-hidden>
       <path d="M20 6 9 17l-5-5" />
     </svg>
   );
@@ -30,7 +30,7 @@ function IconTrendingUp() {
 function Step({ delay, children, big = false }: { delay: number; children: React.ReactNode; big?: boolean }) {
   return (
     <div
-      className={`fx-item w-full rounded-[24px] ${big ? "fx-final bg-[#6d4aff] py-[28px] shadow-[0_20px_50px_-12px_rgba(109,74,255,0.45)]" : "bg-[#f5f5f7] py-[18px]"} flex flex-col items-center gap-[2px] px-[24px] text-center`}
+      className={`fx-item w-full rounded-[24px] ${big ? "fx-final bg-[var(--color-brand,#6d4aff)] py-[28px] shadow-[0_20px_50px_-12px_color-mix(in_srgb,var(--color-brand,#6d4aff)_45%,transparent)]" : "bg-[#f5f5f7] py-[18px]"} flex flex-col items-center gap-[2px] px-[24px] text-center`}
       style={{ "--fx-delay": `${delay}s` } as React.CSSProperties}
     >
       {children}
@@ -75,7 +75,7 @@ export function MathSection() {
       <div className="mx-auto grid w-full max-w-[1080px] items-center gap-[48px] lg:grid-cols-[2fr_3fr]">
         {/* Texto */}
         <div className="fx-item flex flex-col items-center gap-[20px] text-center lg:items-start lg:text-left" style={{ "--fx-delay": "0s" } as React.CSSProperties}>
-          <span className="inline-flex items-center gap-[6px] rounded-full bg-[#f5f5f7] px-[14px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-[#6d4aff]">
+          <span className="inline-flex items-center gap-[6px] rounded-full bg-[#f5f5f7] px-[14px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-[var(--color-brand,#6d4aff)]">
             🧮 FAÇA AS CONTAS
           </span>
           <h2 className="font-display text-[34px] font-semibold leading-[1.05] text-[#111111]">
@@ -97,7 +97,7 @@ export function MathSection() {
         {/* Timeline visual */}
         <div className="relative">
           {/* brilho roxo discreto */}
-          <div aria-hidden className="absolute inset-x-[10%] top-[15%] h-[70%] rounded-full bg-[#6d4aff] opacity-[0.07] blur-[80px]" />
+          <div aria-hidden className="absolute inset-x-[10%] top-[15%] h-[70%] rounded-full bg-[var(--color-brand,#6d4aff)] opacity-[0.07] blur-[80px]" />
           <div className="relative flex flex-col items-center gap-[6px] rounded-[24px] border border-[#eaeaea] bg-white px-[28px] py-[36px] shadow-[0_24px_60px_-24px_rgba(17,17,17,0.12)]">
             <Step delay={0.15}>
               <span className="text-[28px] leading-none" aria-hidden>

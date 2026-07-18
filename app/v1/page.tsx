@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Collage } from "@/components/Collage";
 import { Marquee } from "@/components/Marquee";
+import { MathSection } from "@/components/MathSection";
 import { CtaButton } from "@/components/CtaButton";
 import { TodayDate } from "@/components/TodayDate";
 import { StickyCta } from "@/components/StickyCta";
@@ -31,13 +33,12 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-
 const PLAN_FEATURES = [
-  "Receitas de cookies clássicos e gourmet.",
-  "Guia de precificação lucrativa.",
-  "Sugestões de embalagens criativas.",
-  "Desafio de 7 dias para suas primeiras vendas.",
-  "Acesso à comunidade de suporte.",
+  "100 receitas testadas, escolhidas pelo baixo custo e alto valor de venda",
+  "Os Segredos da Massa Perfeita para um cookie que gera indicação",
+  "Técnicas de preparo profissional mesmo em fogão comum",
+  "Modelagem e padronização para todos saírem iguais e com cara de loja",
+  "Erros comuns que fazem você perder fornada (e dinheiro) e como evitar",
 ];
 
 /* Versão curta dos 4 bônus para o card da oferta principal (a seção de bônus vem logo abaixo). */
@@ -48,18 +49,11 @@ const OFFER_BONUS_FEATURES = [
   "Como conseguir e fidelizar as primeiras clientes",
 ];
 
-/* Itens do card do Plano Básico. */
-const BASIC_FEATURES = [
-  "Receitas de Cookies Clássicos",
-  "Guia de Precificação Lucrativa",
-  "Sugestões de Embalagens Criativas",
-  "Acesso ao Desafio de 7 dias",
-];
-
 const BONUS_FEATURES = [
-  "🎁 Instagram Magnético para Confeiteiras",
-  "🎁 20 Ações para Conseguir Clientes",
-  "🎁 Comunidade Primeiras Vendas",
+  "🎁 Precificação para Venda",
+  "🎁 Cálculo de Custos e Margem de Lucro",
+  "🎁 Modelos de embalagens para Valorizar o Produto",
+  "🎁 Como conseguir e Fidelizar os Primeiros Clientes",
 ];
 
 function FeatureList({ items, struckItems = [], light = false }: { items: string[]; struckItems?: string[]; light?: boolean }) {
@@ -120,13 +114,11 @@ function MaterialsCarousel() {
       duration={32}
       itemWidth={260}
       containerClassName="max-w-[480px] lg:max-w-[560px]"
-      imageSize={{ width: 575, height: 863 }}
-      items={[
-        { src: "/entregaveis/cookie-kitkat.jpg", alt: "Ficha da receita: Cookies KitKat" },
-        { src: "/entregaveis/cookie-nutella.jpg", alt: "Ficha da receita: Cookies Nutella" },
-        { src: "/entregaveis/cookie-oreo.jpg", alt: "Ficha da receita: Cookies Oreo" },
-        { src: "/entregaveis/cookie-ferrero-rocher.jpg", alt: "Ficha da receita: Cookies Ferrero Rocher" },
-      ]}
+      imageSize={{ width: 595, height: 842 }}
+      items={Array.from({ length: 8 }, (_, i) => ({
+        src: `/img/entregavel-${i + 1}.webp`,
+        alt: `Ficha do material Cookie Lab ${i + 1}`,
+      }))}
     />
   );
 }
@@ -154,68 +146,59 @@ function TestimonialGrid() {
 /* ---------- dados ---------- */
 
 const WHY_CARDS = [
-  { icon: "📖", text: "Receitas testadas e aprovadas — fáceis de seguir e aplicar" },
-  { icon: "💰", text: "Orientações sobre precificação — saiba quanto cobrar" },
-  { icon: "🎁", text: "Sugestões de embalagens — atraia mais clientes com um bom visual" },
-  { icon: "🗓️", text: "Desafio de 7 dias — comece a vender rapidamente" },
-  { icon: "💬", text: "Acesso a uma comunidade de suporte — tire dúvidas e troque experiências" },
+  "Como encontrar os primeiros clientes",
+  "Quanto cobrar",
+  "Como receber encomendas",
+  "Como divulgar sem gastar com anúncios",
+  "Como fazer clientes comprarem novamente",
+  "Como transformar um hobby em renda extra",
 ];
 
 const IDEAL_ITEMS = [
-  { title: "AUMENTAR SUA RENDA MENSAL", desc: "Ganhar até R$1.000 a mais por semana, trabalhando em casa." },
-  { title: "TRABALHAR NO SEU PRÓPRIO TEMPO", desc: "Produzir e vender cookies nas horas vagas, sem pressão." },
-  { title: "APRENDER UMA NOVA HABILIDADE", desc: "Descubra como fazer cookies deliciosos mesmo sem experiência." },
-  { title: "TER SUPORTE E COMUNIDADE", desc: "Contar com ajuda de outras confeiteiras em um grupo exclusivo." },
-  { title: "VENDER DE FORMA SIMPLES", desc: "Aprender a conquistar clientes com ações práticas e diretas." },
-  { title: "CRIAR LEMBRANÇAS GOSTOSAS", desc: "Fazer cookies que podem se tornar a sua nova fonte de renda." },
+  "Ter uma renda extra sem precisar largar seu emprego",
+  "Começar um pequeno negócio investindo pouco.",
+  "Trabalhar no seu tempo, direto da cozinha da sua casa.",
+  "Aprender uma receita que realmente chama atenção dos clientes.",
+  "Vender um produto com alto valor percebido.",
+  "Ganhar dinheiro nos finais de semana ou no tempo livre.",
 ];
 
 const BONUSES = [
   {
-    img: "/entregaveis/bonus-instagram.webp",
-    title: "Instagram Magnético para Confeiteiras",
-    desc: "Como atrair clientes pelo Instagram.",
-    price: "R$27",
+    img: "/img/bonus-1.webp",
+    title: "Guia de Precificação para venda",
+    desc: "Aprenda a definir o preço certo para vender com confiança e lucrar em cada cookie.",
+    price: "R$12,90",
   },
   {
-    img: "/entregaveis/bonus-acoes.webp",
-    title: "20 Ações para Conseguir Clientes",
-    desc: "Ações simples para gerar pedidos.",
-    price: "R$27",
+    img: "/img/bonus-2.webp",
+    title: "Cálculo de Custos e Margem de lucro",
+    desc: "Descubra exatamente quanto custa produzir cada cookie e quanto sobra de lucro em cada venda.",
+    price: "R$19,90",
   },
   {
-    img: "/entregaveis/bonus-vendas.webp",
-    title: "Comunidade Primeiras Vendas",
-    desc: "Grupo exclusivo para networking e dúvidas.",
-    price: "R$27",
+    img: "/img/bonus-3.webp",
+    title: "Modelos de Embalagens para Valorizar o Produto",
+    desc: "Embalagens prontas e inspirações que deixam seus cookies mais profissionais e aumentam o valor percebido.",
+    price: "R$49,90",
+  },
+  {
+    img: "/img/bonus-4.webp",
+    title: "Como Conseguir e Fidelizar os Primeiros Clientes",
+    desc: "Estratégias simples para conquistar seus primeiros compradores e fazer com que eles voltem a comprar.",
+    price: "R$12,90",
   },
 ];
 
 const STEPS = [
-  {
-    icon: "🛒",
-    title: "Conclua sua compra",
-    desc: "Após o pagamento, seu acesso é liberado automaticamente.",
-    items: ["Você recebe um e-mail de confirmação.", "Acesse a área de membros."],
-  },
+  { icon: "🛒", title: "Passo 1", desc: "Você finaliza a compra de forma segura." },
   {
     icon: "📱",
-    title: "Entre na área de membros",
-    desc: "Acesse o conteúdo exclusivo do desafio.",
-    items: ["Receitas e guias disponíveis.", "Suporte em grupo para dúvidas.", "Networking com outras confeiteiras."],
+    title: "Passo 2",
+    desc: "Receba o seu acesso imediatamente em seu email. Você pode acessar no seu celular, computador e tablet, em qualquer lugar do planeta!",
   },
-  {
-    icon: "📁",
-    title: "Baixe os arquivos",
-    desc: "Tenha acesso a todos os materiais prontos.",
-    items: ["Receitas em formato PDF.", "Guias prontos para impressão.", "Conteúdo acessível sempre que precisar."],
-  },
-  {
-    icon: "🍪",
-    title: "Use e aplique",
-    desc: "Comece a produzir e vender seus cookies.",
-    items: ["Imprima as receitas.", "Prepare os cookies.", "Venda e veja sua renda aumentar."],
-  },
+  { icon: "📁", title: "Passo 3", desc: "Baixe e visualize todos os arquivos." },
+  { icon: "🍪", title: "Passo 4", desc: "Comece a produzir seus Cookies. Em caso de dúvidas basta chamar nosso suporte." },
 ];
 
 const FAQ = [
@@ -240,7 +223,7 @@ const FAQ = [
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-col" style={{ "--color-brand": "#914c2e" } as React.CSSProperties}>
+    <main className="flex w-full flex-col">
       {/* Barra de oferta */}
       <div className="flex items-center justify-center bg-red-600 p-[10px]">
         <p className="text-center font-display text-[12px] font-semibold leading-[1.6] text-white">
@@ -251,30 +234,36 @@ export default function Home() {
 
       {/* Hero */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[16px] px-[10px] pt-[30px] text-center">
-        <Image src="/v2/logo-cookie-lucrativo.png" alt="Cookies Lucrativos" width={142} height={42} preload className="h-[46px] w-auto" />
-        <h1 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-        <span className="text-brand">+R$200 POR DIA </span>COM COOKIES ARTESANAIS EM CASA
+        <Image src="/img/logo.webp" alt="Cookie Lab" width={122} height={36} preload className="h-[36px] w-auto" />
+        <h1 className="font-display text-[30px] font-semibold leading-[0.9] text-ink">
+        O método que já ajudou centenas de mulheres a <span className="text-brand">transformar a própria cozinha em uma fonte de renda</span> vendendo cookies premium, mesmo começando do zero.
+      
         </h1>
+        <p className="max-w-[362px] text-[16px]">
+        Além das receitas, <b>você aprende exatamente como conseguir suas primeiras clientes, quanto cobrar</b>, como divulgar e transformar uma simples fornada em uma renda extra.
+        </p>
         <Image
-          src="/img/img-hero-cookies-lucrativos.jpg"
-          alt="Materiais do desafio Cookies Lucrativos para vender cookies artesanais"
+          src="/img/hero-collage.jpg"
+          alt="E-book Cookie Lab com guia completo para vender cookies gourmet e 4 bônus exclusivos"
           width={1100}
           height={1100}
           preload
           sizes="(max-width: 480px) 95vw, 383px"
-          className="mx-auto mt-[10px] w-full max-w-[383px] rounded-[10px]"
+          className="w-full max-w-[383px] rounded-[10px]"
         />
-        <p className="max-w-[362px] text-[16px]">
-        Você aprenderá a produzir e vender cookies artesanais na sua própria cozinha, conquistando vendas que podem gerar R$200 ou mais por dia, mesmo sem experiência anterior.
-        </p>
-        
         <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="hero" className="max-w-[382px]" />
         <p className="max-w-[362px] text-[14px]">
         Você não precisa abrir uma confeitaria. A maioria das primeiras vendas acontece para vizinhos, colegas de trabalho, faculdade e contatos do WhatsApp.
         </p>
-        
+        <div className="w-full max-w-[382px] rounded-[12px] bg-gradient-to-br from-brand to-[#4b2bd6] px-[16px] py-[12px] text-white shadow-[0_10px_28px_-12px_rgba(109,74,255,0.5)]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/70">🧮 Faça as contas</p>
+          <p className="mt-[4px] font-display text-[18px] font-semibold leading-[1.25]">
+            10 Cookies vendidos no dia por R$14 = <span className="whitespace-nowrap">R$2.800/mês</span>{" "}
+            <span className="text-[13px] font-normal text-white/80">em vendas*</span>
+          </p>
+        </div>
         <div className="flex flex-wrap items-start justify-center gap-x-[10px]">
-          {["Receitas fáceis e rápidas de cookies", "Estratégias de preços lucrativos", "Embalagens atrativas para venda", "Desafio de 7 dias para suas primeiras vendas","Suporte em grupo exclusivo"].map((t) => (
+          {["Receitas escolhidas pelo baixo custo e alto lucro por unidade", "Ingredientes de qualquer mercado, começando com o que você já tem", "Passo a passo para quem nunca cozinhou", "Como precificar, embalar e conseguir as primeiras clientes"].map((t) => (
             <span key={t} className="flex w-[175px] items-center gap-[10px] p-[10px] font-display text-[14px] text-black">
               <Check />
               <span className="text-left">{t}</span>
@@ -295,63 +284,155 @@ export default function Home() {
       {/* Materiais */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[20px] px-[10px] py-[30px] text-center lg:max-w-[640px]">
         <h2 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-          VEJA AS RECEITAS QUE VOCÊ VAI RECEBER JÁ!
+          Veja o material que vai te guiar da primeira fornada à primeira venda:
         </h2>
-        
+        <div className="relative aspect-square w-full max-w-[382px] overflow-hidden rounded-[7px] lg:max-w-[520px]">
+          <Image
+            src="/img/cookie-delicioso.jpeg"
+            alt="Aluna do Cookie Lab preparando massa de cookies na cozinha de casa"
+            fill
+            sizes="(max-width: 480px) 95vw, 382px"
+            className="object-cover"
+          />
+        </div>
         <MaterialsCarousel />
       </section>
 
       {/* Por que vender cookies */}
       <section className="w-full bg-brand px-[39px] py-[37px]">
-        <h2 className="mb-[24px] text-center font-display text-[38px] font-semibold leading-[0.9] text-white">
-          OS MATERIAIS DO DESAFIO COOKIES LUCRATIVOS POSSUEM:
+        <h2 className="mb-[10px] text-center font-display text-[38px] font-semibold leading-[0.9] text-white">
+          Você não vai aprender apenas a fazer cookies.
         </h2>
-        <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-[11px]">
+        <p className="mb-[24px] text-center font-display text-[28px] font-semibold leading-[1.1] text-white">
+          Você vai aprender a vender.
+        </p>
+        <div className="mx-auto grid max-w-[402px] grid-cols-2 gap-x-[10px] gap-y-[11px] lg:max-w-[1000px] lg:grid-cols-3">
           {WHY_CARDS.map((c) => (
-            <div key={c.text} className="flex w-full items-center gap-[14px] rounded-[10px] bg-white p-[16px]">
-              <span className="text-[28px] leading-none" aria-hidden>{c.icon}</span>
-              <p className="text-left font-display text-[20px] leading-[1.18] text-black">{c.text}</p>
+            <div key={c} className="flex min-h-[99px] flex-col items-center justify-center gap-[10px] rounded-[10px] bg-white p-[10px]">
+              <Check />
+              <p className="text-center font-display text-[20px] leading-[1.18] text-black">{c}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Ideal para você */}
-      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] pt-[35px] lg:max-w-[1000px]">
-        <h2 className="mb-[24px] max-w-[380px] text-center font-display text-[38px] font-semibold leading-[0.9] text-ink lg:max-w-[640px]">
-          ESTE DESAFIO É IDEAL PARA VOCÊ QUE DESEJA
+      {/* Oportunidade */}
+      <section className="flex w-full flex-col items-center gap-[10px] bg-black px-[20px] py-[35px] text-center [&>p]:max-w-[620px]">
+        <h2 className="font-display text-[38px] font-semibold leading-[0.9] text-white">
+          Você já deve ter visto alguém vendendo Cookies...
         </h2>
-        <div className="grid w-full gap-[11px] lg:grid-cols-3">
-          {IDEAL_ITEMS.map((item) => (
-            <div key={item.title} className="flex items-start gap-[12px] rounded-[10px] bg-brand p-[16px] text-left">
-              <Check className="mt-[5px] w-4" />
-              <div className="flex flex-col gap-[6px]">
-                <p className="font-display text-[20px] font-semibold leading-[1.1] text-white">{item.title}</p>
-                <p className="text-[16px] leading-[1.3] text-white/85">{item.desc}</p>
-              </div>
+        <p className="text-[18px] text-[#b6b6b6]">
+          Mas a verdade é que ainda são poucas as pessoas aproveitando essa <span className="text-cta">oportunidade.</span>
+        </p>
+        <p className="text-[18px] text-white">
+          Enquanto muita gente ainda nem percebeu essa tendência, quem começa agora pode conquistar seus primeiros
+          clientes antes que o mercado fique cheio.
+        </p>
+        <p className="text-[18px] text-white">Você provavelmente já viu isso acontecer antes...</p>
+        <p className="font-display text-[32px] font-semibold text-white">Morango do Amor 🍓</p>
+        <p className="font-display text-[32px] font-semibold text-white">Bolo de Pote 🎂</p>
+        <p className="font-display text-[32px] font-semibold text-white">Fatia de Bolo 🍰</p>
+        <p className="font-display text-[32px] font-semibold text-white">Copo da Felicidade 🥤</p>
+        <p className="text-[18px] text-[#b6b6b6]">
+          Todos esses produtos viraram febre e fizeram muita gente começar uma renda extra.
+        </p>
+        <p className="text-[18px] text-[#b6b6b6]">Quem entrou cedo aproveitou a melhor fase.</p>
+        <p className="text-[18px] text-[#b6b6b6]">
+          Agora os <strong className="text-white">Cookies Premium</strong> estão ganhando espaço, e quem começar agora
+          vai atender uma demanda que ainda tem pouca gente vendendo na maioria das cidades.
+        </p>
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR A VENDER COOKIES" id="oportunidade" className="mt-[10px]" />
+      </section>
+
+      {/* Aviso de urgência */}
+      <section className="flex w-full flex-col items-center gap-[14px] bg-alert px-[20px] py-[35px] text-center [&>p]:max-w-[620px]">
+        <span className="text-[40px] leading-none" aria-hidden>
+          ⚠️
+        </span>
+        <h2 className="max-w-[620px] font-display text-[38px] font-semibold leading-[0.9] text-white">
+          Você provavelmente perdeu as outras ondas...
+        </h2>
+        <p className="text-[18px] text-white">
+          Morango do Amor, Bolo de Pote, Copo da Felicidade: todos venderam <strong>muito</strong> no Brasil inteiro, e
+          quem entrou cedo faturou mais.
+        </p>
+        <p className="text-[18px] text-white">
+          A hora de sair na frente e vender muito é <strong>agora</strong>, enquanto os Cookies Premium ainda estão
+          começando.
+        </p>
+        <p className="font-display text-[22px] font-semibold leading-[1.1] text-white">
+          Por isso, essa oferta NÃO ficará liberada por muito tempo!
+        </p>
+      </section>
+
+      {/* Faça as contas */}
+      <MathSection />
+
+      {/* Antes x Depois */}
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[20px] px-[10px] py-[35px] text-center lg:max-w-[820px]">
+        <h2 className="max-w-[382px] font-display text-[38px] font-semibold leading-[0.9] text-ink lg:max-w-[560px]">
+          &ldquo;Mas fazer Cookies é fácil, por que eu deveria comprar?&rdquo;
+        </h2>
+        <p className="max-w-[382px] text-[18px]">
+          Fazer é só o começo. A diferença entre um hobby e uma <strong>renda de verdade</strong> está no que vem
+          depois: vender, precificar e conquistar clientes.
+        </p>
+        <div className="grid w-full max-w-[382px] grid-cols-1 gap-[12px] lg:max-w-[720px] lg:grid-cols-2">
+          <div className="flex flex-col gap-[10px] rounded-[16px] border border-[#e6e6e6] bg-[#f9f9f9] p-[20px] text-left">
+            <p className="font-display text-[22px] font-semibold text-muted">Sem o Cookie Lab</p>
+            <ul className="flex flex-col gap-[8px] text-[17px] text-[#6b6b6b]">
+              {["Testa receitas da internet e desperdiça ingrediente", "Não sabe quanto cobrar e vende no prejuízo", "Faz cookie gostoso mas não sabe para quem vender"].map((t) => (
+                <li key={t} className="flex items-center gap-[10px]">
+                  <span aria-hidden>❌</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-[10px] rounded-[16px] bg-brand p-[20px] text-left shadow-[0_16px_36px_-16px_rgba(109,74,255,0.6)]">
+            <p className="font-display text-[22px] font-semibold text-white">Com o Cookie Lab</p>
+            <ul className="flex flex-col gap-[8px] text-[17px] font-semibold text-white">
+              {["Sabe produzir", "Sabe vender", "Sabe cobrar", "Sabe divulgar"].map((t) => (
+                <li key={t} className="flex items-center gap-[10px]">
+                  <span aria-hidden>✅</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR A VENDER COOKIES" id="antes_depois" />
+      </section>
+
+      {/* Ideal para você */}
+      <section className="mx-auto flex w-full flex-col items-center gap-[8px] px-[10px] py-[35px]">
+        <h2 className="mb-[16px] max-w-[274px] text-center font-display text-[38px] font-semibold leading-[0.9] text-ink">
+          Ideal para você que deseja:
+        </h2>
+        <div className="grid w-full max-w-[275px] gap-[8px] lg:max-w-[860px] lg:grid-cols-3">
+          {IDEAL_ITEMS.map((t) => (
+            <div key={t} className="flex w-full flex-col items-center justify-center gap-[10px] rounded-[10px] bg-brand p-[10px]">
+              <Check />
+              <p className="text-center font-display text-[20px] leading-[1.18] text-white">{t}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-[20px] flex w-full justify-center">
+          <MaterialsCarousel />
         </div>
       </section>
 
       {/* Oferta principal */}
-      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] pb-[35px] pt-[35px]">
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] pb-[35px]">
         <h2 className="mb-[20px] max-w-[350px] text-center font-display text-[38px] font-semibold leading-[0.9] text-ink">
-         TUDO O QUE VOCÊ VAI RECEBER
+          Tudo o que você vai receber ao adquirir:
         </h2>
         <Pill>⚡ACESSO IMEDIATO</Pill>
         <div className="mt-[-17px] flex w-full flex-col items-center gap-[14px] rounded-[16px] bg-dark px-[10px] py-[30px] text-center">
           <h3 className="mt-[10px] font-display text-[32px] font-semibold leading-[1.008] text-white">
-            <span>TUDO FOI ORGANIZADO PARA SER SIMPLES E FÁCIL DE APLICAR.</span>
+            100 Receitas de Cookies para transformar sua cozinha em uma nova <span className="text-brand">fonte de renda.</span>
           </h3>
-          <Image
-            src="/img/img-hero-cookies-lucrativos.jpg"
-            alt="Materiais do desafio Cookies Lucrativos"
-            width={1100}
-            height={1100}
-            sizes="(max-width: 480px) 95vw, 383px"
-            className="w-full max-w-[383px] rounded-[10px]"
-          />
+          <Collage />
           <FeatureList items={[...OFFER_BONUS_FEATURES, ...BONUS_FEATURES]} light />
           <p className="font-display text-[18px] text-white">E MUITO MAIS...</p>
           <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="oferta_principal" />
@@ -364,11 +445,9 @@ export default function Home() {
       {/* Bônus */}
       <section className="flex w-full flex-col items-center gap-[10px] bg-brand px-[39px] py-[37px]">
         <h2 className="mb-[10px] max-w-[640px] text-center font-display text-[32px] font-semibold leading-[1.008] text-white">
-           E NÃO PARA POR AÍ... TEM MAIS!<br></br>
-          você também vai receber:<br></br>
-          <Pill>🎁 3 BÔNUS EXCLUSIVOS</Pill>
+          🎁 Além das 100 receitas, ao adquirir o Plano Completo você vai levar 4 SUPER BÔNUS
         </h2>
-        <div className="grid grid-cols-1 justify-items-center gap-[16px] lg:grid-cols-3">
+        <div className="grid grid-cols-1 justify-items-center gap-[16px] lg:grid-cols-2">
         {BONUSES.map((b) => (
           <article key={b.title} className="flex w-full max-w-[324px] flex-col items-center gap-[13px] overflow-hidden rounded-[20px] bg-white pb-[20px] text-center">
             <Image src={b.img} alt={b.title} width={648} height={446} sizes="324px" className="h-[223px] w-full object-cover" />
@@ -387,34 +466,29 @@ export default function Home() {
         </div>
       </section>
 
-      
+      {/* Depoimentos 1 */}
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] py-[26px]">
+        <TestimonialGrid />
+      </section>
 
       {/* Planos */}
-      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] pb-[35px] pt-[35px] lg:max-w-[1040px]">
+      <section className="mx-auto flex w-full max-w-[480px] flex-col items-center px-[10px] pb-[35px] lg:max-w-[1040px]">
         <Pill>⏰ OFERTA VÁLIDA POR TEMPO LIMITADO</Pill>
         <h2 className="my-[24px] max-w-[346px] text-center font-display text-[38px] font-semibold leading-[0.9] text-ink lg:max-w-[560px]">
-   ESCOLHA A MELHOR OPÇÃO PARA VOCÊ
+          Aproveite enquanto o Plano Completo está em promoção
         </h2>
 
         <div className="flex w-full flex-col lg:grid lg:grid-cols-2 lg:items-start lg:gap-[24px]">
         {/* Plano Básico */}
-        <div className="flex w-full flex-col items-center gap-[14px] rounded-[16px] border border-[#d5d5d5] bg-[#FCE9D8] px-[10px] py-[30px] text-center">
+        <div className="flex w-full flex-col items-center gap-[14px] rounded-[16px] border border-[#d5d5d5] bg-[#f9f9f9] px-[10px] py-[30px] text-center">
           <h3 className="font-display text-[32px] font-semibold text-black">Plano Básico</h3>
-          <Image
-            src="/entregaveis/plano-basico-cookie.jpg"
-            alt="Materiais do Plano Básico do desafio Cookies Lucrativos"
-            width={1104}
-            height={1104}
-            sizes="(max-width: 480px) 95vw, 383px"
-            className="w-full max-w-[383px] rounded-[10px]"
-          />
-          <h2 className="font-display text-[32px] font-semibold text-black">você recebe:</h2>
-          <FeatureList items={BASIC_FEATURES} struckItems={BONUS_FEATURES} />
-          <p className="font-display text-[18px] text-alert line-through">R$37,90</p>
-          <p className="font-display text-[64px] font-semibold leading-none text-black">R$27,90</p>
-          <p className="font-display text-[18px] text-black">ou 4x de R$7,47 no cartão</p>
-          <p className="font-display text-[18px] text-black">🟢 você economiza R$10,00</p>
-          <CtaButton href={CHECKOUT_BASIC} label="QUERO O PLANO BÁSICO!" id="plano_basico" planName="Basico" />
+          <Collage variant="basic" />
+          <FeatureList items={PLAN_FEATURES} struckItems={BONUS_FEATURES} />
+          <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
+          <p className="font-display text-[64px] font-semibold leading-none text-black">R$19,90</p>
+          <p className="font-display text-[18px] text-black">ou 2x de R$10,47 no cartão</p>
+          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" planName="Basico" />
+          <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px]" />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
             <span className="text-black">Leve mais e pague menos, 97% escolhem a nossa</span>{" "}
@@ -429,42 +503,29 @@ export default function Home() {
         <div id="plano-completo" className="mt-[40px] flex w-full scroll-mt-[20px] flex-col items-center lg:mt-0">
           <Pill>⚡MAIS VENDIDO</Pill>
           <div className="mt-[-17px] flex w-full flex-col items-center gap-[14px] rounded-[16px] bg-dark px-[10px] py-[30px] text-center">
-            <span className="mt-[10px] inline-block rounded-full bg-alert px-[14px] py-[8px] text-[14px] font-bold text-white">
-              🔥 ÚLTIMA CHANCE — OFERTA TERMINA HOJE
-            </span>
-            <p className="bg-brand px-[11px] py-[10px] font-display text-[32px] font-semibold text-white">
+            <p className="mt-[10px] bg-brand px-[11px] py-[10px] font-display text-[32px] font-semibold text-white">
               PLANO COMPLETO
             </p>
             <p className="flex items-center gap-[10px] font-display text-[18px] text-white">
               <Check /> TODOS OS BÔNUS INCLUSOS
             </p>
-            
+            <h3 className="font-display text-[32px] font-semibold leading-[1.008] text-white">
+              100 Receitas de Cookies para transformar sua cozinha em uma nova <span className="text-brand">fonte de renda.</span>
+            </h3>
             <Image
-              src="/img/img-hero-cookies-lucrativos.jpg"
-              alt="Materiais do desafio Cookies Lucrativos"
-              width={1100}
-              height={1100}
+              src="/img/cookie-delicioso.jpeg"
+              alt="Cookie gourmet com gotas de chocolate"
+              width={1472}
+              height={1952}
               sizes="(max-width: 480px) 95vw, 383px"
               className="w-full max-w-[383px] rounded-[10px]"
             />
-             <Pill>⚡3X MAIS CONTEÚDOS</Pill>
             <FeatureList items={[...PLAN_FEATURES, ...BONUS_FEATURES]} light />
-            <p className="font-display text-[18px] text-alert line-through">R$67,90</p>
-            <p className="font-display text-[64px] font-semibold leading-none text-white">R$37,90</p>
-            <p className="font-display text-[18px] text-white">ou 6x de R$6,35 no cartão</p>
-            <p className="font-display text-[18px] text-white">🟢 você economiza R$30,00</p>
+            <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
+            <p className="font-display text-[64px] font-semibold leading-none text-white">R$29,90</p>
+            <p className="font-display text-[18px] text-white">ou 4x de R$8,14 no cartão</p>
             <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" planName="Completo" />
-          </div>
-          <div className="mt-[14px] flex w-full flex-col items-center gap-[10px] rounded-[12px] border border-badge/40 bg-badge/10 p-[16px] text-center">
-            <span className="flex size-[26px] shrink-0 items-center justify-center rounded-full bg-badge text-[15px] font-bold text-white" aria-hidden>
-              ✓
-            </span>
-            <div>
-              <p className="font-display text-[17px] font-semibold leading-[1.15] text-ink">
-                UMA ÚNICA VENDA PODE PAGAR O VALOR DO PACOTE INTEIRO.
-              </p>
-              <p className="mt-[4px] text-[15px] text-muted">Todo o resto vira lucro.</p>
-            </div>
+            <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px] rounded-[8px] bg-white p-[10px]" />
           </div>
         </div>
         </div>
@@ -478,17 +539,9 @@ export default function Home() {
         </h2>
         <div className="max-w-[320px] text-[16px] text-white">
           <p>SEU INVESTIMENTO É TOTALMENTE SEGURO</p>
-          <p className="mt-[16px]">Isso significa que, a qualquer momento, se você achar que:</p>
-          <ul className="mx-auto mt-[12px] flex w-fit flex-col gap-[8px] text-left">
-            {["o material não faz sentido para suas vendas.", "as receitas não atendem suas expectativas.", "ou simplesmente não quiser continuar."].map((t) => (
-              <li key={t} className="flex items-start gap-[10px]">
-                <span className="mt-[7px] size-[8px] shrink-0 rounded-full bg-alert" aria-hidden />
-                {t}
-              </li>
-            ))}
-          </ul>
           <p className="mt-[16px]">
-            Você pode solicitar o reembolso. Sem prazo, sem burocracia. <strong>O risco fica todo do nosso lado.</strong>
+            Oferecemos 7 dias de garantia total para você testar o material. Se decidir que não é para você, basta
+            cancelar a compra e devolveremos todo o valor pago, sem complicação.
           </p>
           <p className="mt-[20px] text-[14px]">Precisa de ajuda? Entre em contato conosco:</p>
           <a
@@ -516,24 +569,14 @@ export default function Home() {
           <br />
           <span className="text-[18px] font-normal">(passo a passo)</span>
         </h2>
-        <div className="flex w-full max-w-[640px] flex-col gap-[10px]">
+        <div className="flex flex-col items-center gap-[10px] lg:flex-row lg:items-stretch lg:justify-center">
           {STEPS.map((s) => (
-            <div key={s.title} className="flex w-full items-start gap-[14px] rounded-[10px] bg-white p-[16px] text-left">
+            <div key={s.title} className="flex w-[200px] flex-col items-center gap-[10px] rounded-[10px] bg-white p-[16px] lg:justify-start">
               <span className="text-[36px] leading-none" aria-hidden>
                 {s.icon}
               </span>
-              <div className="flex flex-col gap-[4px]">
-                <p className="font-display text-[20px] text-black">{s.title}</p>
-                <p className="text-[14px] text-[#696969]">{s.desc}</p>
-                <ul className="mt-[4px] flex flex-col gap-[2px]">
-                  {s.items.map((t) => (
-                    <li key={t} className="flex items-center gap-[8px] text-[14px] text-black">
-                      <Check className="w-[13px]" />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="font-display text-[20px] text-black">{s.title}</p>
+              <p className="text-[14px] text-[#696969]">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -569,7 +612,7 @@ export default function Home() {
         </p>
         <p className="mt-[20px] text-[12px] text-muted">
           Este site não possui qualquer vínculo com Facebook, Google ou qualquer outra plataforma mencionada. Todos os
-          direitos da obra &ldquo;Desafio Cookies Lucrativos&rdquo; são reservados ao seu autor. A reprodução não autorizada, total ou
+          direitos da obra &ldquo;Cookie Lab&rdquo; são reservados ao seu autor. A reprodução não autorizada, total ou
           parcial, por qualquer meio, constitui violação de direitos autorais e pode resultar em sanções civis e
           criminais, de acordo com a legislação aplicável.
         </p>

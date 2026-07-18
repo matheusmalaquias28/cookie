@@ -3,7 +3,6 @@ import { Fredoka, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Gtm } from "@/components/Gtm";
-import { MetaPixel } from "@/components/MetaPixel";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -19,13 +18,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Cookie Lab | 100 Receitas de Cookies para Renda Extra",
+  title: "Cookies Lucrativos | Renda Extra com Cookies Artesanais",
   description:
-    "Aprenda a produzir cookies premium, mesmo começando do zero, e descubra como vender um produto que as pessoas realmente querem comprar. Acesso imediato.",
+    "Aprenda a produzir e vender cookies artesanais na sua própria cozinha, conquistando vendas que podem gerar R$200 ou mais por dia, mesmo sem experiência anterior.",
   openGraph: {
-    title: "Cookie Lab | 100 Receitas de Cookies para Renda Extra",
+    title: "Cookies Lucrativos | Renda Extra com Cookies Artesanais",
     description:
-      "100 receitas de cookies validadas, testadas e aprovadas para transformar sua cozinha em uma nova fonte de renda.",
+      "Receitas testadas, precificação, embalagens e desafio de 7 dias para transformar sua cozinha em uma nova fonte de renda.",
     locale: "pt_BR",
     type: "website",
   },
@@ -34,9 +33,6 @@ export const metadata: Metadata = {
     icon: "/img/favicon.png?v=2",
     shortcut: "/img/favicon.png?v=2",
     apple: "/img/favicon.png?v=2",
-  },
-  other: {
-    "facebook-domain-verification": "605r3kua2i8ifzjkc9a5lbw6yw6dy8",
   },
 };
 
@@ -48,16 +44,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${fredoka.variable} ${manrope.variable} antialiased`}>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.pixelId = "6a59941a6f716bcb8a5f23fa";
-var a = document.createElement("script");
-a.setAttribute("async", "");
-a.setAttribute("defer", "");
-a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-document.head.appendChild(a);`,
-          }}
-        />
         <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-subids
@@ -76,7 +62,6 @@ document.head.appendChild(a);`,
         />
         {children}
         <Gtm />
-        <MetaPixel />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -10,15 +10,23 @@ type Props = {
   itemWidth?: number;
   /** Dimensões intrínsecas das imagens (para o next/image calcular o aspect ratio). */
   imageSize?: { width: number; height: number };
+  /** Largura máxima do container do carrossel. */
+  containerClassName?: string;
 };
 
 /**
  * Carrossel infinito e contínuo, só com CSS.
  * A trilha é renderizada duas vezes; a animação desloca -50% e reinicia sem emenda.
  */
-export function Marquee({ items, duration = 20, itemWidth = 188, imageSize = { width: 386, height: 578 } }: Props) {
+export function Marquee({
+  items,
+  duration = 20,
+  itemWidth = 188,
+  imageSize = { width: 386, height: 578 },
+  containerClassName = "max-w-[382px]",
+}: Props) {
   return (
-    <div className="w-full max-w-[382px] overflow-hidden rounded-[7px]">
+    <div className={`w-full overflow-hidden rounded-[7px] ${containerClassName}`}>
       <div
         className="marquee-track flex w-max gap-[6px]"
         style={{ "--marquee-duration": `${duration}s` } as React.CSSProperties}
