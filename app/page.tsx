@@ -4,7 +4,6 @@ import { Marquee } from "@/components/Marquee";
 import { MathSection } from "@/components/MathSection";
 import { CtaButton } from "@/components/CtaButton";
 import { TodayDate } from "@/components/TodayDate";
-import { Countdown } from "@/components/Countdown";
 import { StickyCta } from "@/components/StickyCta";
 import { CHECKOUT_BASIC, CHECKOUT_COMPLETE } from "@/lib/config";
 
@@ -14,6 +13,14 @@ function Check({ className = "w-4" }: { className?: string }) {
   return (
     <svg viewBox="0 0 18 13" fill="none" className={`${className} shrink-0`} aria-hidden>
       <path d="M17 1L6 12L1 7" stroke="#07C707" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Cross({ className = "w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 14 14" fill="none" className={`${className} shrink-0`} aria-hidden>
+      <path d="M1 1L13 13M13 1L1 13" stroke="#E53935" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -49,7 +56,7 @@ const BONUS_FEATURES = [
   "🎁 Como conseguir e Fidelizar os Primeiros Clientes",
 ];
 
-function FeatureList({ items, light = false }: { items: string[]; light?: boolean }) {
+function FeatureList({ items, struckItems = [], light = false }: { items: string[]; struckItems?: string[]; light?: boolean }) {
   return (
     <ul className="flex w-full max-w-[356px] flex-col px-[10px] py-[5px]">
       {items.map((f) => (
@@ -58,6 +65,15 @@ function FeatureList({ items, light = false }: { items: string[]; light?: boolea
           className={`flex items-center gap-[10px] p-[10px] text-left font-display text-[18px] leading-[1.008] ${light ? "text-white" : "text-black"}`}
         >
           <Check />
+          {f}
+        </li>
+      ))}
+      {struckItems.map((f) => (
+        <li
+          key={f}
+          className={`flex items-center gap-[10px] p-[10px] text-left font-display text-[18px] leading-[1.008] line-through opacity-40 ${light ? "text-white" : "text-black"}`}
+        >
+          <Cross />
           {f}
         </li>
       ))}
@@ -128,14 +144,12 @@ function TestimonialGrid() {
 /* ---------- dados ---------- */
 
 const WHY_CARDS = [
-  "Baixo investimento",
-  "Alta procura",
-  "Fácil de aprender",
-  "Alto valor percebido",
-  "Pode vender pelo Instagram",
-  "Condomínios",
-  "Empresas",
-  "Escolas",
+  "Como encontrar os primeiros clientes",
+  "Quanto cobrar",
+  "Como receber encomendas",
+  "Como divulgar sem gastar com anúncios",
+  "Como fazer clientes comprarem novamente",
+  "Como transformar um hobby em renda extra",
 ];
 
 const IDEAL_ITEMS = [
@@ -209,28 +223,36 @@ export default function Home() {
   return (
     <main className="flex w-full flex-col">
       {/* Barra de oferta */}
-      <div className="flex items-center justify-center bg-brand p-[10px]">
+      <div className="flex items-center justify-center bg-red-600 p-[10px]">
         <p className="text-center font-display text-[12px] font-semibold leading-[1.6] text-white">
-          <span className="block lg:inline">
-            OFERTA ESPECIAL DISPONÍVEL SOMENTE HOJE <TodayDate />
-          </span>
-          <Countdown />
+          OFERTA ESPECIAL DISPONÍVEL SOMENTE HOJE <TodayDate />
         </p>
       </div>
       <StickyCta />
 
       {/* Hero */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[16px] px-[10px] pt-[30px] text-center">
-        <Image src="/img/logo.webp" alt="Cookie Lab" width={142} height={46} preload className="h-[46px] w-auto" />
-        <h1 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-          Transforme sua cozinha em uma <span className="text-brand">renda extra de até R$2.800/mês</span> vendendo
-          Cookies Gourmet, mesmo que você nunca tenha feito um cookie na vida
+        <Image src="/img/logo.webp" alt="Cookie Lab" width={122} height={36} preload className="h-[36px] w-auto" />
+        <h1 className="font-display text-[30px] font-semibold leading-[0.9] text-ink">
+        O método que já ajudou centenas de mulheres a <span className="text-brand">transformar a própria cozinha em uma fonte de renda</span> vendendo cookies premium, mesmo começando do zero.
+      
         </h1>
-        <p className="max-w-[362px] text-[18px]">
-          Receitas com <strong>custo baixo de produção e preço de venda de até R$14 por unidade,</strong> mais o passo
-          a passo para conseguir suas primeiras clientes pelo WhatsApp, no condomínio e na vizinhança.
+        <p className="max-w-[362px] text-[16px]">
+        Além das receitas, <b>você aprende exatamente como conseguir suas primeiras clientes, quanto cobrar</b>, como divulgar e transformar uma simples fornada em uma renda extra.
         </p>
-        <Collage preload />
+        <Image
+          src="/img/hero-collage.jpg"
+          alt="E-book Cookie Lab com guia completo para vender cookies gourmet e 4 bônus exclusivos"
+          width={1100}
+          height={1100}
+          preload
+          sizes="(max-width: 480px) 95vw, 383px"
+          className="w-full max-w-[383px] rounded-[10px]"
+        />
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="hero" className="max-w-[382px]" />
+        <p className="max-w-[362px] text-[14px]">
+        Você não precisa abrir uma confeitaria. A maioria das primeiras vendas acontece para vizinhos, colegas de trabalho, faculdade e contatos do WhatsApp.
+        </p>
         <div className="w-full max-w-[382px] rounded-[12px] bg-gradient-to-br from-brand to-[#4b2bd6] px-[16px] py-[12px] text-white shadow-[0_10px_28px_-12px_rgba(109,74,255,0.5)]">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/70">🧮 Faça as contas</p>
           <p className="mt-[4px] font-display text-[18px] font-semibold leading-[1.25]">
@@ -246,7 +268,6 @@ export default function Home() {
             </span>
           ))}
         </div>
-        <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="hero" className="max-w-[382px]" />
         <p className="text-[14px] font-semibold text-muted">
           Você recebe tudo na hora, direto no seu e-mail ✉️ e 📞. É só imprimir e usar.
         </p>
@@ -265,7 +286,7 @@ export default function Home() {
         </h2>
         <div className="relative aspect-square w-full max-w-[382px] overflow-hidden rounded-[7px] lg:max-w-[520px]">
           <Image
-            src="/img/photo-woman.webp"
+            src="/img/cookie-delicioso.jpeg"
             alt="Aluna do Cookie Lab preparando massa de cookies na cozinha de casa"
             fill
             sizes="(max-width: 480px) 95vw, 382px"
@@ -277,10 +298,13 @@ export default function Home() {
 
       {/* Por que vender cookies */}
       <section className="w-full bg-brand px-[39px] py-[37px]">
-        <h2 className="mb-[24px] text-center font-display text-[38px] font-semibold leading-[0.9] text-white">
-          Por que vender Cookies?🍪
+        <h2 className="mb-[10px] text-center font-display text-[38px] font-semibold leading-[0.9] text-white">
+          Você não vai aprender apenas a fazer cookies.
         </h2>
-        <div className="mx-auto grid max-w-[402px] grid-cols-2 gap-x-[10px] gap-y-[11px] lg:max-w-[1000px] lg:grid-cols-4">
+        <p className="mb-[24px] text-center font-display text-[28px] font-semibold leading-[1.1] text-white">
+          Você vai aprender a vender.
+        </p>
+        <div className="mx-auto grid max-w-[402px] grid-cols-2 gap-x-[10px] gap-y-[11px] lg:max-w-[1000px] lg:grid-cols-3">
           {WHY_CARDS.map((c) => (
             <div key={c} className="flex min-h-[99px] flex-col items-center justify-center gap-[10px] rounded-[10px] bg-white p-[10px]">
               <Check />
@@ -407,7 +431,7 @@ export default function Home() {
             100 Receitas de Cookies para transformar sua cozinha em uma nova <span className="text-brand">fonte de renda.</span>
           </h3>
           <Collage />
-          <FeatureList items={OFFER_BONUS_FEATURES} light />
+          <FeatureList items={[...OFFER_BONUS_FEATURES, ...BONUS_FEATURES]} light />
           <p className="font-display text-[18px] text-white">E MUITO MAIS...</p>
           <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="oferta_principal" />
           <p className="text-[14px] font-semibold text-muted">
@@ -457,7 +481,7 @@ export default function Home() {
         <div className="flex w-full flex-col items-center gap-[14px] rounded-[16px] border border-[#d5d5d5] bg-[#f9f9f9] px-[10px] py-[30px] text-center">
           <h3 className="font-display text-[32px] font-semibold text-black">Plano Básico</h3>
           <Collage variant="basic" />
-          <FeatureList items={PLAN_FEATURES} />
+          <FeatureList items={PLAN_FEATURES} struckItems={BONUS_FEATURES} />
           <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$19,90</p>
           <p className="font-display text-[18px] text-black">ou 2x de R$10,47 no cartão</p>
@@ -486,7 +510,14 @@ export default function Home() {
             <h3 className="font-display text-[32px] font-semibold leading-[1.008] text-white">
               100 Receitas de Cookies para transformar sua cozinha em uma nova <span className="text-brand">fonte de renda.</span>
             </h3>
-            <Collage />
+            <Image
+              src="/img/cookie-delicioso.jpeg"
+              alt="Cookie gourmet com gotas de chocolate"
+              width={1472}
+              height={1952}
+              sizes="(max-width: 480px) 95vw, 383px"
+              className="w-full max-w-[383px] rounded-[10px]"
+            />
             <FeatureList items={[...PLAN_FEATURES, ...BONUS_FEATURES]} light />
             <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$29,90</p>

@@ -25,7 +25,7 @@ export function Countdown() {
   if (!left) return null;
   return (
     <span className="block text-center tabular-nums lg:inline lg:before:content-['_|_']">
-      TERMINA EM {left}
+      {left}
     </span>
   );
 }
