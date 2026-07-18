@@ -27,12 +27,13 @@ export const metadata: Metadata = {
       "Receitas testadas, precificação, embalagens e desafio de 7 dias para transformar sua cozinha em uma nova fonte de renda.",
     locale: "pt_BR",
     type: "website",
+    images: [{ url: "/img/logo-desafio-cookie-lucrativos.png", width: 828, height: 828 }],
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/img/favicon.png?v=2",
-    shortcut: "/img/favicon.png?v=2",
-    apple: "/img/favicon.png?v=2",
+    icon: "/img/logo-desafio-cookie-lucrativos.png?v=3",
+    shortcut: "/img/logo-desafio-cookie-lucrativos.png?v=3",
+    apple: "/img/logo-desafio-cookie-lucrativos.png?v=3",
   },
 };
 
