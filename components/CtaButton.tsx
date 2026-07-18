@@ -19,9 +19,10 @@ export function CtaButton({ href, label, id, planName, className = "" }: Props) 
       href={href}
       onClick={() => {
         track("cta_click", { cta_id: id, cta_label: label });
-        fbTrackCustom("CtaClick", { cta_id: id, cta_label: label });
         if (planName) {
           fbTrackCustom(`CtaPlano${planName}`, { cta_id: id, cta_label: label });
+        } else {
+          fbTrackCustom("CtaClick", { cta_id: id, cta_label: label });
         }
       }}
       className={`cta-pulse flex h-[60px] w-full max-w-[365px] items-center justify-center bg-cta font-display text-[24px] font-semibold text-white ${className}`}
