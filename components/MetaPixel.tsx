@@ -72,8 +72,14 @@ export function MetaPixel() {
   );
 }
 
-/** Dispara um evento do Pixel de qualquer lugar (usa a fila se o script ainda não carregou). */
+/** Dispara um evento padrão do Pixel de qualquer lugar (usa a fila se o script ainda não carregou). */
 export function fbTrack(event: string, data?: Record<string, unknown>) {
   if (typeof window === "undefined") return;
   ensureStub()("track", event, data);
+}
+
+/** Dispara um evento customizado do Pixel (fora da lista de eventos padrão da Meta). */
+export function fbTrackCustom(event: string, data?: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  ensureStub()("trackCustom", event, data);
 }

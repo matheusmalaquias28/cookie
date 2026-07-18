@@ -27,11 +27,19 @@ function Pill({ children }: { children: React.ReactNode }) {
 }
 
 const PLAN_FEATURES = [
-  "100 Receitas de Cookies validadas, testadas e aprovadas.",
-  "Os Segredos da Massa Perfeita",
-  "Técnicas de Preparo Profissional",
-  "Modelagem e Padronização",
-  "Erros Comuns e Como Corrigir",
+  "100 receitas testadas, escolhidas pelo baixo custo e alto valor de venda",
+  "Os Segredos da Massa Perfeita para um cookie que gera indicação",
+  "Técnicas de preparo profissional mesmo em fogão comum",
+  "Modelagem e padronização para todos saírem iguais e com cara de loja",
+  "Erros comuns que fazem você perder fornada (e dinheiro) e como evitar",
+];
+
+/* Versão curta dos 4 bônus para o card da oferta principal (a seção de bônus vem logo abaixo). */
+const OFFER_BONUS_FEATURES = [
+  "Precificação: o preço certo para lucrar em cada cookie",
+  "Custos e margem: saiba quanto sobra em cada venda",
+  "Embalagens prontas que valorizam seu cookie",
+  "Como conseguir e fidelizar as primeiras clientes",
 ];
 
 const BONUS_FEATURES = [
@@ -181,7 +189,7 @@ const FAQ = [
   ["Nunca fiz cookies. Esse material é para mim?", "Sim! O método foi pensado para iniciantes: as receitas trazem o passo a passo completo, com técnicas explicadas do zero."],
   ["Preciso ter experiência na cozinha?", "Não. Você só precisa seguir as receitas — os segredos da massa, preparo e modelagem estão detalhados no material."],
   ["Quanto preciso investir para começar?", "Muito pouco. Os ingredientes são fáceis de encontrar em qualquer mercado e você pode começar com o que já tem na sua cozinha."],
-  ["Quanto posso ganhar vendendo cookies?", "Depende do seu ritmo de produção e vendas. O material inclui precificação e cálculo de margem para você lucrar em cada fornada."],
+  ["Quanto posso ganhar vendendo cookies?", "Depende do quanto você produz e vende. Para ter uma referência: um cookie gourmet é vendido em média entre R$10 e R$16, com custo de produção bem menor que isso. O material inclui a planilha de precificação e margem para você saber exatamente seu lucro por fornada."],
   ["Como vou receber o material?", "Imediatamente após a compra, direto no seu e-mail. É só baixar, imprimir e usar."],
   ["O acesso é vitalício?", "Sim! Você paga uma única vez e o material é seu para sempre."],
   ["Os bônus estão inclusos?", "Os 4 bônus exclusivos estão inclusos apenas no Plano Completo."],
@@ -190,7 +198,7 @@ const FAQ = [
   ["A compra é segura?", "Totalmente. O pagamento é processado por plataforma segura e seus dados ficam protegidos."],
   ["Funciona para quem mora em cidade pequena?", "Sim! Em cidades pequenas a concorrência é menor e o boca a boca funciona ainda mais rápido. Vizinhos, escolas, comércios e eventos locais são ótimos pontos de venda."],
   ["Eu sou tímida, não sei vender nem abordar as pessoas", "Sem problema. O bônus de como conseguir os primeiros clientes traz estratégias simples que não dependem de abordagem: você pode vender pelo WhatsApp, Instagram e por indicação — o produto chama atenção sozinho."],
-  ["Tenho pouco tempo no meu dia, dá para vender mesmo assim?", "Dá sim. Você pode produzir em poucas horas nos horários livres ou finais de semana. A massa pode ser feita com antecedência, e você define seu próprio ritmo de produção e vendas."],
+  ["Tenho pouco tempo no meu dia, dá para vender mesmo assim?", "Dá sim. Você pode produzir em poucas horas nos horários livres ou finais de semana. A massa pode ser feita com antecedência, e você pode trabalhar por encomenda, produzindo só o que já foi vendido, sem desperdício."],
   ["Preciso ter muitos equipamentos para começar?", "Não. Forno, batedeira (ou até mesmo as mãos), tigelas e assadeiras que você provavelmente já tem em casa são suficientes para começar."],
   ["Por que esse material é diferente de uma simples receita de Cookie?", "Porque receita sozinha não gera renda. Aqui você recebe 100 receitas validadas + o passo a passo do negócio: precificação, cálculo de custos, embalagens e estratégias para conseguir e fidelizar clientes."],
 ] as const;
@@ -215,12 +223,12 @@ export default function Home() {
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[16px] px-[10px] pt-[30px] text-center">
         <Image src="/img/logo.webp" alt="Cookie Lab" width={142} height={46} preload className="h-[46px] w-auto" />
         <h1 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-          Guia completo para vender Cookies e transformar sua cozinha em uma{" "}
-          <span className="text-brand">nova fonte de renda</span>
+          Transforme sua cozinha em uma <span className="text-brand">renda extra de até R$2.800/mês</span> vendendo
+          Cookies Gourmet, mesmo que você nunca tenha feito um cookie na vida
         </h1>
         <p className="max-w-[362px] text-[18px]">
-          Aprenda a <strong>produzir cookies premium,</strong> mesmo começando do zero, e descubra como vender um
-          produto que as pessoas realmente querem comprar.
+          Receitas com <strong>custo baixo de produção e preço de venda de até R$14 por unidade,</strong> mais o passo
+          a passo para conseguir suas primeiras clientes pelo WhatsApp, no condomínio e na vizinhança.
         </p>
         <Collage preload />
         <div className="w-full max-w-[382px] rounded-[12px] bg-gradient-to-br from-brand to-[#4b2bd6] px-[16px] py-[12px] text-white shadow-[0_10px_28px_-12px_rgba(109,74,255,0.5)]">
@@ -231,7 +239,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap items-start justify-center gap-x-[10px]">
-          {["Receitas Testadas", "Ingredientes fáceis de encontrar", "Método pensado para iniciantes", "Estratégias para vender"].map((t) => (
+          {["Receitas escolhidas pelo baixo custo e alto lucro por unidade", "Ingredientes de qualquer mercado, começando com o que você já tem", "Passo a passo para quem nunca cozinhou", "Como precificar, embalar e conseguir as primeiras clientes"].map((t) => (
             <span key={t} className="flex w-[175px] items-center gap-[10px] p-[10px] font-display text-[14px] text-black">
               <Check />
               <span className="text-left">{t}</span>
@@ -253,7 +261,7 @@ export default function Home() {
       {/* Materiais */}
       <section className="mx-auto flex w-full max-w-[480px] flex-col items-center gap-[20px] px-[10px] py-[30px] text-center lg:max-w-[640px]">
         <h2 className="font-display text-[38px] font-semibold leading-[0.9] text-ink">
-          Veja como são os materiais que você vai receber:
+          Veja o material que vai te guiar da primeira fornada à primeira venda:
         </h2>
         <div className="relative aspect-square w-full max-w-[382px] overflow-hidden rounded-[7px] lg:max-w-[520px]">
           <Image
@@ -304,10 +312,10 @@ export default function Home() {
         </p>
         <p className="text-[18px] text-[#b6b6b6]">Quem entrou cedo aproveitou a melhor fase.</p>
         <p className="text-[18px] text-[#b6b6b6]">
-          Agora os <strong className="text-white">Cookies Premium</strong> estão ganhando espaço, e essa pode ser a sua
-          chance de começar.
+          Agora os <strong className="text-white">Cookies Premium</strong> estão ganhando espaço, e quem começar agora
+          vai atender uma demanda que ainda tem pouca gente vendendo na maioria das cidades.
         </p>
-        <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="oportunidade" className="mt-[10px]" />
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR A VENDER COOKIES" id="oportunidade" className="mt-[10px]" />
       </section>
 
       {/* Aviso de urgência */}
@@ -347,7 +355,7 @@ export default function Home() {
           <div className="flex flex-col gap-[10px] rounded-[16px] border border-[#e6e6e6] bg-[#f9f9f9] p-[20px] text-left">
             <p className="font-display text-[22px] font-semibold text-muted">Sem o Cookie Lab</p>
             <ul className="flex flex-col gap-[8px] text-[17px] text-[#6b6b6b]">
-              {["Sem renda", "Sem clientes", "Sem saber precificar"].map((t) => (
+              {["Testa receitas da internet e desperdiça ingrediente", "Não sabe quanto cobrar e vende no prejuízo", "Faz cookie gostoso mas não sabe para quem vender"].map((t) => (
                 <li key={t} className="flex items-center gap-[10px]">
                   <span aria-hidden>❌</span>
                   {t}
@@ -367,7 +375,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="antes_depois" />
+        <CtaButton href="#plano-completo" label="QUERO COMEÇAR A VENDER COOKIES" id="antes_depois" />
       </section>
 
       {/* Ideal para você */}
@@ -399,7 +407,7 @@ export default function Home() {
             100 Receitas de Cookies para transformar sua cozinha em uma nova <span className="text-brand">fonte de renda.</span>
           </h3>
           <Collage />
-          <FeatureList items={PLAN_FEATURES} light />
+          <FeatureList items={OFFER_BONUS_FEATURES} light />
           <p className="font-display text-[18px] text-white">E MUITO MAIS...</p>
           <CtaButton href="#plano-completo" label="QUERO COMEÇAR AGORA" id="oferta_principal" />
           <p className="text-[14px] font-semibold text-muted">
@@ -453,7 +461,7 @@ export default function Home() {
           <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$19,90</p>
           <p className="font-display text-[18px] text-black">ou 2x de R$10,47 no cartão</p>
-          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" />
+          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" checkoutValue={19.9} />
           <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px]" />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
@@ -483,7 +491,7 @@ export default function Home() {
             <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$29,90</p>
             <p className="font-display text-[18px] text-white">ou 4x de R$8,14 no cartão</p>
-            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" />
+            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" checkoutValue={29.9} />
             <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px] rounded-[8px] bg-white p-[10px]" />
           </div>
         </div>

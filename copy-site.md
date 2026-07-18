@@ -29,12 +29,12 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 **Logo:** Cookie Lab
 
 **Headline (H1):**
-> Guia completo para vender Cookies e transformar sua cozinha em uma **nova fonte de renda**
+> Transforme sua cozinha em uma **renda extra de até R$2.800/mês** vendendo Cookies Gourmet, mesmo que você nunca tenha feito um cookie na vida
 
-*(o trecho "nova fonte de renda" é destacado na cor da marca)*
+*(o trecho "renda extra de até R$2.800/mês" é destacado na cor da marca)*
 
 **Subheadline:**
-> Aprenda a **produzir cookies premium,** mesmo começando do zero, e descubra como vender um produto que as pessoas realmente querem comprar.
+> Receitas com **custo baixo de produção e preço de venda de até R$14 por unidade,** mais o passo a passo para conseguir suas primeiras clientes pelo WhatsApp, no condomínio e na vizinhança.
 
 **Imagem:** colagem de fotos de cookies (mockup do material).
 
@@ -43,10 +43,10 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 > **10 Cookies vendidos no dia por R$14 = R$2.800/mês** em vendas*
 
 **Bullets com check verde:**
-- ✔ Receitas Testadas
-- ✔ Ingredientes fáceis de encontrar
-- ✔ Método pensado para iniciantes
-- ✔ Estratégias para vender
+- ✔ Receitas escolhidas pelo baixo custo e alto lucro por unidade
+- ✔ Ingredientes de qualquer mercado, começando com o que você já tem
+- ✔ Passo a passo para quem nunca cozinhou
+- ✔ Como precificar, embalar e conseguir as primeiras clientes
 
 **CTA:** QUERO COMEÇAR AGORA
 
@@ -67,7 +67,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 ## 5. Seção "Materiais"
 
 **H2:**
-> Veja como são os materiais que você vai receber:
+> Veja o material que vai te guiar da primeira fornada à primeira venda:
 
 **Imagem:** foto de aluna preparando massa de cookies na cozinha de casa.
 
@@ -115,9 +115,9 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 >
 > Quem entrou cedo aproveitou a melhor fase.
 >
-> Agora os **Cookies Premium** estão ganhando espaço, e essa pode ser a sua chance de começar.
+> Agora os **Cookies Premium** estão ganhando espaço, e quem começar agora vai atender uma demanda que ainda tem pouca gente vendendo na maioria das cidades.
 
-**CTA:** QUERO COMEÇAR AGORA
+**CTA:** QUERO COMEÇAR A VENDER COOKIES
 
 ---
 
@@ -146,7 +146,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 > Quanto você precisaria vender para fazer uma renda extra?
 
 **Subtexto:**
-> Às vezes, alguns cookies por dia já podem representar uma boa renda complementar.
+> Vendendo só 10 cookies por dia, para vizinhas, colegas de trabalho e pelo WhatsApp, as contas ficam assim:
 
 **Bullets:**
 - ✔ Receita validada
@@ -172,9 +172,9 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 > Fazer é só o começo. A diferença entre um hobby e uma **renda de verdade** está no que vem depois: vender, precificar e conquistar clientes.
 
 **Card "Sem o Cookie Lab" (cinza):**
-- ❌ Sem renda
-- ❌ Sem clientes
-- ❌ Sem saber precificar
+- ❌ Testa receitas da internet e desperdiça ingrediente
+- ❌ Não sabe quanto cobrar e vende no prejuízo
+- ❌ Faz cookie gostoso mas não sabe para quem vender
 
 **Card "Com o Cookie Lab" (roxo, destaque):**
 - ✅ Sabe produzir
@@ -182,7 +182,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 - ✅ Sabe cobrar
 - ✅ Sabe divulgar
 
-**CTA:** QUERO COMEÇAR AGORA
+**CTA:** QUERO COMEÇAR A VENDER COOKIES
 
 ---
 
@@ -215,12 +215,11 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 
 **Imagem:** colagem de cookies.
 
-**Lista de features (checks):**
-- 100 Receitas de Cookies validadas, testadas e aprovadas.
-- Os Segredos da Massa Perfeita
-- Técnicas de Preparo Profissional
-- Modelagem e Padronização
-- Erros Comuns e Como Corrigir
+**Lista de features (checks — versão curta dos 4 bônus da seção seguinte):**
+- Precificação: o preço certo para lucrar em cada cookie
+- Custos e margem: saiba quanto sobra em cada venda
+- Embalagens prontas que valorizam seu cookie
+- Como conseguir e fidelizar as primeiras clientes
 
 > E MUITO MAIS...
 
@@ -273,11 +272,11 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 ### Plano Básico (card claro)
 - **Título:** Plano Básico
 - **Features:**
-  - 100 Receitas de Cookies validadas, testadas e aprovadas.
-  - Os Segredos da Massa Perfeita
-  - Técnicas de Preparo Profissional
-  - Modelagem e Padronização
-  - Erros Comuns e Como Corrigir
+  - 100 receitas testadas, escolhidas pelo baixo custo e alto valor de venda
+  - Os Segredos da Massa Perfeita para um cookie que gera indicação
+  - Técnicas de preparo profissional mesmo em fogão comum
+  - Modelagem e padronização para todos saírem iguais e com cara de loja
+  - Erros comuns que fazem você perder fornada (e dinheiro) e como evitar
 - **Preço:** ~~R$39,90~~ → **R$19,90** — ou 2x de R$10,47 no cartão
 - **CTA:** QUERO ESSA OPÇÃO!
 - **Selo:** formas de pagamento + compra segura Hotmart
@@ -291,11 +290,11 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 - ✔ TODOS OS BÔNUS INCLUSOS
 - **H3:** 100 Receitas de Cookies para transformar sua cozinha em uma nova **fonte de renda.**
 - **Features (5 do plano + 4 bônus):**
-  - 100 Receitas de Cookies validadas, testadas e aprovadas.
-  - Os Segredos da Massa Perfeita
-  - Técnicas de Preparo Profissional
-  - Modelagem e Padronização
-  - Erros Comuns e Como Corrigir
+  - 100 receitas testadas, escolhidas pelo baixo custo e alto valor de venda
+  - Os Segredos da Massa Perfeita para um cookie que gera indicação
+  - Técnicas de preparo profissional mesmo em fogão comum
+  - Modelagem e padronização para todos saírem iguais e com cara de loja
+  - Erros comuns que fazem você perder fornada (e dinheiro) e como evitar
   - 🎁 Precificação para Venda
   - 🎁 Cálculo de Custos e Margem de Lucro
   - 🎁 Modelos de embalagens para Valorizar o Produto
@@ -358,7 +357,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 1. **Nunca fiz cookies. Esse material é para mim?** — Sim! O método foi pensado para iniciantes: as receitas trazem o passo a passo completo, com técnicas explicadas do zero.
 2. **Preciso ter experiência na cozinha?** — Não. Você só precisa seguir as receitas — os segredos da massa, preparo e modelagem estão detalhados no material.
 3. **Quanto preciso investir para começar?** — Muito pouco. Os ingredientes são fáceis de encontrar em qualquer mercado e você pode começar com o que já tem na sua cozinha.
-4. **Quanto posso ganhar vendendo cookies?** — Depende do seu ritmo de produção e vendas. O material inclui precificação e cálculo de margem para você lucrar em cada fornada.
+4. **Quanto posso ganhar vendendo cookies?** — Depende do quanto você produz e vende. Para ter uma referência: um cookie gourmet é vendido em média entre R$10 e R$16, com custo de produção bem menor que isso. O material inclui a planilha de precificação e margem para você saber exatamente seu lucro por fornada.
 5. **Como vou receber o material?** — Imediatamente após a compra, direto no seu e-mail. É só baixar, imprimir e usar.
 6. **O acesso é vitalício?** — Sim! Você paga uma única vez e o material é seu para sempre.
 7. **Os bônus estão inclusos?** — Os 4 bônus exclusivos estão inclusos apenas no Plano Completo.
@@ -367,7 +366,7 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 10. **A compra é segura?** — Totalmente. O pagamento é processado por plataforma segura e seus dados ficam protegidos.
 11. **Funciona para quem mora em cidade pequena?** — Sim! Em cidades pequenas a concorrência é menor e o boca a boca funciona ainda mais rápido. Vizinhos, escolas, comércios e eventos locais são ótimos pontos de venda.
 12. **Eu sou tímida, não sei vender nem abordar as pessoas** — Sem problema. O bônus de como conseguir os primeiros clientes traz estratégias simples que não dependem de abordagem: você pode vender pelo WhatsApp, Instagram e por indicação — o produto chama atenção sozinho.
-13. **Tenho pouco tempo no meu dia, dá para vender mesmo assim?** — Dá sim. Você pode produzir em poucas horas nos horários livres ou finais de semana. A massa pode ser feita com antecedência, e você define seu próprio ritmo de produção e vendas.
+13. **Tenho pouco tempo no meu dia, dá para vender mesmo assim?** — Dá sim. Você pode produzir em poucas horas nos horários livres ou finais de semana. A massa pode ser feita com antecedência, e você pode trabalhar por encomenda, produzindo só o que já foi vendido, sem desperdício.
 14. **Preciso ter muitos equipamentos para começar?** — Não. Forno, batedeira (ou até mesmo as mãos), tigelas e assadeiras que você provavelmente já tem em casa são suficientes para começar.
 15. **Por que esse material é diferente de uma simples receita de Cookie?** — Porque receita sozinha não gera renda. Aqui você recebe 100 receitas validadas + o passo a passo do negócio: precificação, cálculo de custos, embalagens e estratégias para conseguir e fidelizar clientes.
 
@@ -389,8 +388,8 @@ Botão flutuante que aparece após o usuário rolar além da hero:
 |---|---|
 | Hero | QUERO COMEÇAR AGORA |
 | Sticky mobile | QUERO COMEÇAR AGORA |
-| Seção oportunidade | QUERO COMEÇAR AGORA |
-| Antes x Depois | QUERO COMEÇAR AGORA |
+| Seção oportunidade | QUERO COMEÇAR A VENDER COOKIES |
+| Antes x Depois | QUERO COMEÇAR A VENDER COOKIES |
 | Oferta principal | QUERO COMEÇAR AGORA |
 | Plano Básico | QUERO ESSA OPÇÃO! (vai ao checkout básico) |
 | Plano Completo | QUERO O PLANO COMPLETO! (vai ao checkout completo) |

@@ -82,7 +82,7 @@ export function MathSection() {
             Quanto você precisaria vender para fazer uma renda extra?
           </h2>
           <p className="max-w-[340px] text-[16px] leading-relaxed text-[#6b6b6b]">
-            Às vezes, alguns cookies por dia já podem representar uma boa renda complementar.
+            Vendendo só 10 cookies por dia, para vizinhas, colegas de trabalho e pelo WhatsApp, as contas ficam assim:
           </p>
           <ul className="flex flex-col gap-[10px] text-[15px] font-semibold text-[#111111]">
             {["Receita validada", "Produto premium", "Baixo investimento"].map((t) => (
