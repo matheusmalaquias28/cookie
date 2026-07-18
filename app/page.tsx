@@ -461,7 +461,7 @@ export default function Home() {
           <p className="font-display text-[18px] text-alert line-through">R$39,90</p>
           <p className="font-display text-[64px] font-semibold leading-none text-black">R$19,90</p>
           <p className="font-display text-[18px] text-black">ou 2x de R$10,47 no cartão</p>
-          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" checkoutValue={19.9} />
+          <CtaButton href={CHECKOUT_BASIC} label="QUERO ESSA OPÇÃO!" id="plano_basico" planName="Basico" />
           <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px]" />
           <p className="max-w-[280px] font-display text-[18px] font-semibold leading-[1.008] text-alert">
             AINDA DÁ TEMPO DE LEVAR A MELHOR OPÇÃO!{" "}
@@ -491,7 +491,7 @@ export default function Home() {
             <p className="font-display text-[18px] text-alert line-through">R$99,90</p>
             <p className="font-display text-[64px] font-semibold leading-none text-white">R$29,90</p>
             <p className="font-display text-[18px] text-white">ou 4x de R$8,14 no cartão</p>
-            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" checkoutValue={29.9} />
+            <CtaButton href={CHECKOUT_COMPLETE} label="QUERO O PLANO COMPLETO!" id="plano_completo" planName="Completo" />
             <Image src="/hotmart.png" alt="Formas de pagamento aceitas e selo de compra segura Hotmart" width={1000} height={300} sizes="(min-width: 1024px) 280px, 63vw" className="w-full max-w-[280px] rounded-[8px] bg-white p-[10px]" />
           </div>
         </div>
