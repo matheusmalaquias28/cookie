@@ -13,11 +13,14 @@ export function StickyCta() {
 
   useEffect(() => {
     const hero = document.querySelector("main > section");
-    const plan = document.getElementById("plano-completo");
+    const planEl = document.getElementById("plano-completo");
+    // Observa a seção de planos inteira: o sticky não pode cobrir o botão de
+    // checkout de nenhum dos cards (Básico incluso) no mobile.
+    const plan = planEl?.closest("section") ?? planEl;
     if (!hero || !plan) return;
 
     const heroIo = new IntersectionObserver(([e]) => setPastHero(!e.isIntersecting));
-    const planIo = new IntersectionObserver(([e]) => setPlanVisible(e.isIntersecting), { threshold: 0.15 });
+    const planIo = new IntersectionObserver(([e]) => setPlanVisible(e.isIntersecting));
     heroIo.observe(hero);
     planIo.observe(plan);
     return () => {

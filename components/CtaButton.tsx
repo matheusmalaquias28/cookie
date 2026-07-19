@@ -5,9 +5,9 @@ import { track } from "@/components/Gtm";
 type Props = {
   href: string;
   label: string;
-  /** Identificador da posição do CTA na página, enviado ao dataLayer e ao Pixel. */
+  /** Identificador da posição do CTA na página, enviado ao dataLayer. */
   id: string;
-  /** Nome do plano ("Basico" | "Completo"): dispara o evento CtaPlano<nome> no Pixel. O InitiateCheckout fica por conta da Hotmart, para não duplicar. */
+  /** Nome do plano ("Basico" | "Completo"). O InitiateCheckout fica por conta da Hotmart. */
   planName?: string;
   className?: string;
 };
